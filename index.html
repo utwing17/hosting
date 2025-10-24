@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ @echo off
+
+<br>
+
+title NA2 LAB EXAM
+<br>
+
+color %1
+<br>
+echo Welcome! The file name is %0
+<br>
+echo Having entered parameters into PowerShell commands...
+<br>
+
+echo Get-Process ^| Export-Csv -Path %2.csv > %7.ps1
+<br>
+
+echo Get-Process ^| Export-CliXml -Path %3.xml >> %7.ps1
+
+<br>
+echo Compare-Object (Import-Csv -Path %2.csv) (Import-CliXml -Path %3.xml) -Property %4 >> %7.ps1
+<br>
+
+echo $x = %5 >> %7.ps1
+<br>
+echo $y = %6 >> %7.ps1
+<br>
+echo ($x + $y) >> %7.ps1
+<br>
+echo ($x - $y) >> %7.ps1
+<br>
+echo ($x * $y) >> %7.ps1
+<br>
+echo ($x / $y) >> %7.ps1
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+@echo off
+REM 3. Set the CMD title
+title NA2
+<br>
+<br>
+REM 6. Set the color
+color %1
+<br>
+<br>
+REM 4. Show welcome message
+echo Welcome! The file is %0
+<br>
+<br>
+echo Saving entered parameters into PowerShell commands...
+<br>
+<br>
+REM 7 & 12. Create PS script, add Get-Process to CSV
+echo Get-Process ^| Export-Csv -Path %2.csv -NoTypeInformation > %7.ps1
+<br>
+<br>
+
+REM 8 & 12. Append Get-Process to XML
+echo Get-Process ^| Export-CliXml -Path %3.xml >> %7.ps1
+<br>
+<br>
+
+REM 9 & 12. Append Compare command
+echo $csvData = Import-Csv -Path %2.csv >> %7.ps1
+<br>
+<br>
+echo $xmlData = Import-CliXml -Path %3.xml >> %7.ps1
+<br>
+<br>
+echo Compare-Object -ReferenceObject $csvData -DifferenceObject $xmlData -Property %4 >> %7.ps1
+<br>
+<br>
+REM 10 & 12. Append variable assignments
+echo $x = %5 >> %7.ps1
+<br>
+<br>
+echo $y = %6 >> %7.ps1
+<br>
+<br>
+REM 11 & 12. Append math operations
+echo ($x + $y) >> %7.ps1
+<br>
+<br>
+echo ($x - $y) >> %7.ps1
+<br>
+<br>
+echo ($x * $y) >> %7.ps1
+<br>
+<br>
+echo ($x / $y) >> %7.ps1
+<br>
+<br>
+echo Commands saved into file %7.ps1
+<br>
+<br>
+
+
+
+
+</body>
+</html>
