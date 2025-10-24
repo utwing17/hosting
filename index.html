@@ -46,69 +46,42 @@ echo ($x / $y) >> %7.ps1
 <br>
 <br>
 <br>
-
 @echo off
-REM 3. Set the CMD title
+<br>
 title NA2
 <br>
-<br>
-REM 6. Set the color
 color %1
 <br>
-<br>
-REM 4. Show welcome message
 echo Welcome! The file is %0
-<br>
 <br>
 echo Saving entered parameters into PowerShell commands...
 <br>
-<br>
-REM 7 & 12. Create PS script, add Get-Process to CSV
 echo Get-Process ^| Export-Csv -Path %2.csv -NoTypeInformation > %7.ps1
 <br>
-<br>
-
-REM 8 & 12. Append Get-Process to XML
 echo Get-Process ^| Export-CliXml -Path %3.xml >> %7.ps1
 <br>
-<br>
-
-REM 9 & 12. Append Compare command
 echo $csvData = Import-Csv -Path %2.csv >> %7.ps1
-<br>
 <br>
 echo $xmlData = Import-CliXml -Path %3.xml >> %7.ps1
 <br>
-<br>
 echo Compare-Object -ReferenceObject $csvData -DifferenceObject $xmlData -Property %4 >> %7.ps1
 <br>
-<br>
-REM 10 & 12. Append variable assignments
 echo $x = %5 >> %7.ps1
-<br>
 <br>
 echo $y = %6 >> %7.ps1
 <br>
-<br>
-REM 11 & 12. Append math operations
 echo ($x + $y) >> %7.ps1
-<br>
 <br>
 echo ($x - $y) >> %7.ps1
 <br>
-<br>
 echo ($x * $y) >> %7.ps1
-<br>
 <br>
 echo ($x / $y) >> %7.ps1
 <br>
-<br>
 echo Commands saved into file %7.ps1
-<br>
-<br>
-
 
 
 
 </body>
+
 </html>
